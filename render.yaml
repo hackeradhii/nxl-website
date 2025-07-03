@@ -1,0 +1,17 @@
+# This file defines the services for the NXL Technologies project on Render.
+# Place this file in the root directory of your project.
+
+services:
+  # Backend Node.js Server
+  - type: web
+    name: nxl-backend
+    env: node
+    # A good default region. Other options include: ohio, frankfurt, singapore
+    region: oregon 
+    # Specifies that the backend code is in the 'backend' sub-folder
+    rootDir: backend
+    # Commands to build and run the server
+    buildCommand: "npm install"
+    startCommand: "node index.js"
+    # Health check path to ensure the server is running
+    healthCheckPath: /api/data
